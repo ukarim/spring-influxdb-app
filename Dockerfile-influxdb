@@ -1,0 +1,5 @@
+FROM influxdb:1.3
+
+ENV INFLUXDB_DB=test_app
+
+EXPOSE 8086
