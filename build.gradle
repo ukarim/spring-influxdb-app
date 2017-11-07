@@ -22,8 +22,15 @@ repositories {
 dependencies {
     compile("org.springframework.boot:spring-boot-starter-web")
     compileOnly("org.projectlombok:lombok:1.16.18")
+    compile("com.github.miwurster:spring-data-influxdb:1.6")
+    compile("org.influxdb:influxdb-java:2.7")
+    testCompile("org.springframework.boot:spring-boot-starter-test")
 }
 
 jar {
     archiveName 'app.jar'
+}
+
+test {
+    useJUnit()
 }
