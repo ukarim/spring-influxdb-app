@@ -24,7 +24,7 @@ public class InfluxDbController {
     )
     public ResponseEntity<InfluxData> get() {
         Optional<InfluxData> last = service.getLast();
-        InfluxData data = last.orElse(new InfluxData());
+        InfluxData data = last.orElseGet(InfluxData::new);
         return new ResponseEntity<>(data, HttpStatus.OK);
     }
 
